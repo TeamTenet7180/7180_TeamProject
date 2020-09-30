@@ -19,11 +19,11 @@ class Homepage extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 
-    public function __construct()
-    {
-        parent::__construct();
-        $this->load->helper('url');
-    }
+    // public function __construct()
+    // {
+    //     parent::__construct();
+    //     $this->load->helper('url');
+    // }
 
 
 	public function index()
