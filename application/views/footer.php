@@ -7,7 +7,7 @@
         <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="<?php echo base_url();?>assets/css/footer.css">
+        <link href="<?php echo base_url(); ?>assets/css/footer.css" rel="stylesheet">
         <link rel="icon" type="image/x-icon" href="images//favicon.ico" />
 	</head>
 
