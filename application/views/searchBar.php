@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="<?php echo base_url(); ?>assets/css/searchBar.css" href="searchBar.css" />
+    <link href="<?php echo base_url(); ?>assets/css/searchBar.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -19,7 +19,7 @@
   </head>
   <body>
 
-    <div class="parallax-window" data-parallax="scroll" data-image-src="bg.jpg">
+    <div class="parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url(); ?>assets/images/homepage_background.png">
       <form class="wrap container">
         <p style="font-size: 80px; color: rgb(219, 219, 219); font-weight: 600">
           Search for Movie Location

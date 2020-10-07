@@ -9,4 +9,10 @@ class Homepage extends CI_Controller {
 		$this->load->view('searchBar');
 		$this->load->view('footer');
 	}
+
+	public function locations() {
+		$this->load->view('galleryView');
+	}
+
+	
 }
