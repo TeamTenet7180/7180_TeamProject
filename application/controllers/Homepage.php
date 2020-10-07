@@ -14,5 +14,8 @@ class Homepage extends CI_Controller {
 		$this->load->view('galleryView');
 	}
 
+	public function detailPage() {
+		$this->load->view('Detail_Page_view');
+	}
 	
 }
