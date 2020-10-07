@@ -20,7 +20,7 @@
               <a class="nav-link selected" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Films</a>
+              <a class="nav-link" href="<?php echo base_url(); ?>index.php/homepage/locations">Films</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Locations</a>
