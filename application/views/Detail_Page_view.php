@@ -35,7 +35,7 @@
   <div id="map" class="main-section">
     <h3 id="map-title" class="title">Map</h3>
     <div id="map-holder">
-      <img src="img/fake-map.png" alt="Map goes here">
+      <img src="<?php echo base_url('assets/images/fake-map.png');?>" alt="Map goes here">
     </div>
   </div>
   <div id="image-list" class="main-section">
@@ -78,13 +78,13 @@
       //the inner html that goes to #carousel-images
       var text = 
       `<div class="carousel-item active">
-      <img class="d-block w-100" src= <?php echo base_url(); ?> ${images.tenet[0]} alt="slide No.1">
+      <img class="d-block w-100" src= <?php echo base_url(); ?>${images.tenet[0]} alt="slide No.1">
       </div>
       `
       for (let index = 1; index < images.tenet.length; index++) {
         const element = images.tenet[index];
         text += `<div class="carousel-item">
-                  <img class="d-block w-100" src=${element} alt="slide No.${index + 1}">
+                  <img class="d-block w-100" src=<?php echo base_url(); ?>${element} alt="slide No.${index + 1}">
                  </div>`
       }
       document.getElementById("carousel-images").innerHTML = text; 
@@ -110,7 +110,7 @@
         tenet: ["Yebai, Hanwen, Hanyang, Xintong, Yawen"]
       };
       //the inner html that goes to #brief-info.
-      var brief_info_text = `<img src= <?php echo base_url(); ?> ${posters.tenet[0]} alt="Poster" id="poster-img">
+      var brief_info_text = `<img src= <?php echo base_url(); ?>${posters.tenet[0]}  alt="Poster" id="poster-img">
       <div id="layout-flex-box1">
         <div id="description">
           <h3 id="title" class="title">${titles.tenet[0]}</h3>

@@ -31,6 +31,9 @@ a.selected {
     color: aliceblue;
 }
 
+body{
+	background-color: #020916;
+}
 /* #navbarNav {
     padding-left: 91em;
 } */
