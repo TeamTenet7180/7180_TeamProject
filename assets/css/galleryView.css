@@ -1,0 +1,40 @@
+* {
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+}
+
+#gallery-view img{
+width:100%;
+}
+
+@media(min-width:960px){
+	#gallery-view .col-md-3 .well{
+		height: 390px;
+	}
+
+	#gallery-view .col-md-3 img{
+		height:250px;
+	}
+}
+
+#gallery-view .col-md-3 {
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+
+}
+
+#gallery-view .wrapper {
+	width: 240px;
+	height: 410px;
+	padding: 1rem;
+	background: rgba(153, 192, 190, 0.445);
+	border-radius: 5px;
+	box-shadow: 5px 5px rgb(182, 180, 180);
+}
+
+
