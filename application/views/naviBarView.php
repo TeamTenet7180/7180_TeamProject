@@ -23,7 +23,7 @@
               <a class="nav-link" href="<?php echo base_url(); ?>index.php/homepage/locations">Films</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Locations</a>
+              <a class="nav-link" href="<?php echo base_url(); ?>index.php/homepage/detailPage">Locations</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Contact Us</a>
