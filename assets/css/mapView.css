@@ -1,0 +1,37 @@
+* {
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+}
+
+#map-details-container {
+    padding: 2rem;
+    background-color: #020916;
+}
+
+#map {
+	width: 70vw;
+	height: 800px;
+	/* Uses viewport (vw & vh) units: https://css-tricks.com/fun-viewport-units */
+	background-color: white;
+	box-shadow: rgba(0,0,0,0.5) 0 5px 10px;
+}
+
+#details-section {
+	width: 20vw;
+	height: 800px;
+	background-color: whitesmoke;
+	overflow-y: scroll;
+}
+
+.card .img {
+	width: 100%;
+    height: auto;
+}
+
+
+
+
+

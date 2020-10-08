@@ -9,35 +9,38 @@
     <link href="<?php echo base_url(); ?>assets/css/Detail_Page_view.css" rel="stylesheet">
 </head>
 <body>
-  <div id="brief-info">
-    <!-- <img src="img/Tenet Poster.jpg" alt="Poster" id="poster-img">
-      <div id="layout-flex-box1">
-        <div id="description">
-          <h3 id="title" class="title">Tenet</h3>
-          <div id="dividing-line"> </div>
-            <p id="synopsis">
-              This is a movie that nobody can understand but we can!!!!! Some other descriptions
-              Some other descriptionsSome other descriptionsSome other descriptionsSome other description
-              Some other descriptionsSome other descriptionsSome other descriptions
-              Some other descriptionsSome other descriptionsSome other descriptionsSome other descriptions
-            </p>
-            <h4 id="tags">
-              Crime | Action | Sc-Fi 
-            </h4>
-        </div>
-        <div id="cast" class="main-section">
-          <h3 id="cast-title" class="title">Cast</h3>
-          <div id="dividing-line"> </div>
-          <p>casting group's names go here!</p>
-        </div>
-      </div> -->
-  </div>
-  <div id="map" class="main-section">
-    <h3 id="map-title" class="title">Map</h3>
-    <div id="map-holder">
-      <img src="<?php echo base_url('assets/images/fake-map.png');?>" alt="Map goes here">
+  
+    <div id="brief-info">
+      <!-- <img src="img/Tenet Poster.jpg" alt="Poster" id="poster-img">
+        <div id="layout-flex-box1">
+          <div id="description">
+            <h3 id="title" class="title">Tenet</h3>
+            <div id="dividing-line"> </div>
+              <p id="synopsis">
+                This is a movie that nobody can understand but we can!!!!! Some other descriptions
+                Some other descriptionsSome other descriptionsSome other descriptionsSome other description
+                Some other descriptionsSome other descriptionsSome other descriptions
+                Some other descriptionsSome other descriptionsSome other descriptionsSome other descriptions
+              </p>
+              <h4 id="tags">
+                Crime | Action | Sc-Fi 
+              </h4>
+          </div>
+          <div id="cast" class="main-section">
+            <h3 id="cast-title" class="title">Cast</h3>
+            <div id="dividing-line"> </div>
+            <p>casting group's names go here!</p>
+          </div>
+        </div> -->
     </div>
-  </div>
+    <div id="map" class="main-section">
+      <h3 id="map-title" class="title">Map</h3>
+      <div id="map-holder">
+        <img src="<?php echo base_url('assets/images/fake-map.png');?>" alt="Map goes here">
+      </div>
+    </div>
+
+
   <div id="image-list" class="main-section">
     
 <div id="images-holder">  

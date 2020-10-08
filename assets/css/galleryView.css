@@ -37,9 +37,9 @@ width:100%;
 	width: 240px;
 	height: 410px;
 	padding: 1rem;
-	background: rgba(153, 192, 190, 0.445);
+	background: rgb(63, 243, 219,0.68);
 	border-radius: 5px;
-	box-shadow: 5px 5px rgb(182, 180, 180);
+	box-shadow: 13px 15px 32px -9px rgba(45,167,189,0.81);
 }
 
 

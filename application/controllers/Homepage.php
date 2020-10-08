@@ -21,5 +21,11 @@ class Homepage extends CI_Controller {
 		$this->load->view('Detail_Page_view');
 		$this->load->view('footer');
 	}
+
+	public function mapview() {
+		$this->load->view('naviBarView');
+		$this->load->view('mapView');
+		$this->load->view('footer');
+	}
 	
 }

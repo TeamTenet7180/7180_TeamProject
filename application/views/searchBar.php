@@ -18,7 +18,6 @@
     <title>Document</title>
   </head>
   <body>
-
     <div class="parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url(); ?>assets/images/homepage_background.png">
       <form class="wrap container">
         <p style="font-size: 80px; color: rgb(219, 219, 219); font-weight: 600">

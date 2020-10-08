@@ -23,8 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost:8080/7180_TeamProject';
-
+// $config['base_url'] = 'http://localhost:80/7180_TeamProject';
+$config['base_url'] = 'http://'. $_SERVER['HTTP_HOST'].'/7180_TeamProject';
 /*
 |--------------------------------------------------------------------------
 | Index File
