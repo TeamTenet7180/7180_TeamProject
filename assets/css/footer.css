@@ -1,9 +1,13 @@
 /* * Footer */
+/* footer{
+	padding: 1% 1% 1%;
+} */
+
 .footer-container{
 	background-color:#182131;
 	font-family: 'Open Sans', serif;
 	color: #fff;
-	padding: 7% 7% 3%;
+	padding: 4.5% 1% 1%;
 	display: inline-block;
 }
 .left{
@@ -52,6 +56,14 @@
 }
 a:hover{
 	color: #FFBB00;
+}
+
+.fa-stack{
+	font-size: 1.8vw;
+   }
+
+.fa-circle-thin{
+	font-size: 3vw;
 }
 
 
