@@ -27,5 +27,15 @@ class Homepage extends CI_Controller {
 		$this->load->view('mapView');
 		$this->load->view('footer');
 	}
+
+	public function searchMovie() {
+		$movie = $this->input->get('movie');
+		$data = array(
+			'movie' => $movie
+		);
+		$this->load->view('naviBarView');
+		$this->load->view('movieLocations', $data);
+		$this->load->view('footer');
+	}
 	
 }

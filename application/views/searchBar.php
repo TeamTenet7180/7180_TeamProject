@@ -19,19 +19,20 @@
   </head>
   <body>
     <div class="parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url(); ?>assets/images/homepage_background.png">
-      <form class="wrap container">
+      <form class="wrap container" action="Homepage/searchMovie" method="get">
         <p style="font-size: 80px; color: rgb(219, 219, 219); font-weight: 600">
           Search for Movie Location
         </p>
         <div class="search">
-          <input
-            type="text"
-            class="searchTerm"
-            placeholder="What are you looking for?"
-          />
-          <button type="submit" class="searchButton">
-            <i class="fa fa-search"></i>
-          </button>
+			  <input
+				type="text"
+				class="searchTerm"
+				placeholder="What are you looking for?"
+				name="movie"
+			  />
+			  <button type="submit" class="searchButton">
+				<i class="fa fa-search"></i>
+			  </button>
         </div>
       </form>
     </div>
