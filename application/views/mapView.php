@@ -20,12 +20,8 @@
 			</div>
 		</div>
 
-		
- 
-
-	   
 		<script src="<?php echo base_url(); ?>assets/js/jquery-3.4.1.min.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/leaflet.js"></script>
-		<script src="<?php echo base_url(); ?>assets/js/mapView.js"></script>
+		<script src="<?php echo base_url(); ?>assets/js/mapview.js"></script>
 	</body>
 </html>
