@@ -2,14 +2,11 @@
 	function setURL() {
 		
 		window.location = "detailPage"
-		
-		
-
 		return false;
 	}
 	
 	
-	function iterateRecords(results) {
+	function iterateRecordsGallery(results) {
 	
 	
 		let output;
@@ -40,7 +37,9 @@
 				}
 
 				store.push({name: recordValue.attributes["Name"].split('(')[0].trim()})
-	
+
+				var recordLatitude = recordValue.geometry;
+
 				infos.push ({
 					name: recordValue.attributes["Name"].split('(')[0].trim(),
 					poster: imageLink,
@@ -48,6 +47,9 @@
 					year: recordValue.attributes["Year"],
 					director: recordValue.attributes["Director"],
 					stars: recordValue.attributes["Stars"],
+					geo: [recordLatitude["y"], recordLatitude["x"]],
+					location: recordValue.attributes["Location"],
+					imdbLink
 				})
 				
 				output += 
@@ -72,6 +74,7 @@
 				console.log(text);
 				infos.forEach(each => {
 					if (text === each.name) {
+						console.log(each.poster)
 						localStorage.setItem('info', JSON.stringify(each))
 					}
 				})
@@ -81,35 +84,6 @@
 	
 	}
 
-	function getMovie() {
-		var info = JSON.parse(localStorage.getItem('info'))
-		let output =`
-        <div class="row">
-          <div class="col-md-4">
-            <img src="${info.poster}" class="thumbnail">
-          </div>
-          <div class="col-md-8">
-            <h2>${info.name}</h2>
-            <ul class="list-group">
-              <li class="list-group-item"><strong>Released:</strong> ${info.year}</li>
-              <li class="list-group-item"><strong>Rated:</strong> ${info.director}</li>
-              <li class="list-group-item"><strong>IMDB Rating:</strong> ${info.stars}</li>
-            </ul>
-          </div>
-        </div>
-        <div class="row">
-          <div class="well">
-            <h3>Plot</h3>
-            ${info.story}
-            <hr>
-            <a href="http://imdb.com/title/${info.imdbID}" target="_blank" class="btn btn-primary">View IMDB</a>
-            <a href="index.html" class="btn btn-default">Go Back To Search</a>
-          </div>
-        </div>
-      `;
-		$('#movie').html(output)
-	}
-
 
 
 $(function() {
@@ -117,8 +91,6 @@ $(function() {
 	$.get(url, function(data) {
 		data = JSON.parse(data)
 		console.log(data.features)
-		iterateRecords(data);
+		iterateRecordsGallery(data);
 	})
-
-
 });

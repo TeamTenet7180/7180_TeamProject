@@ -2,12 +2,16 @@
 	box-sizing: border-box;
 }
 
+body {
+	background-color: #020916;
+}
+
 a {
 	text-decoration: none;
 }
 
 #map-details-container {
-    padding: 2rem;
+    padding: 1rem;
     background-color: #020916;
 }
 
@@ -33,5 +37,77 @@ a {
 
 
 
+.tab-container {
+	background-color: #020916;
+    width: 100%;
+
+}
+.tab-container .button-container {
+	padding-top: 1rem ;
+	height: 60px;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+
+.tab-container .button-container button {
+	border-radius: 5px;
+	width: 8%;
+	height: 100%;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	padding: 10px;
+	font-size: 1rem;
+	background: white;
+	margin-left: 1rem;
+}
+
+
+
+
+* {
+	box-sizing: border-box;
+
+}
+
+body{
+	background-color: #020916;
+}
+
+a {
+	text-decoration: none;
+}
+
+#gallery-view img{
+width:100%;
+}
+
+@media(min-width:960px){
+	#gallery-view .col-md-3 .well{
+		height: 390px;
+	}
+
+	#gallery-view .col-md-3 img{
+		height:250px;
+	}
+}
+
+#gallery-view .col-md-3 {
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+
+}
+
+#gallery-view .wrapper {
+	width: 240px;
+	height: 410px;
+	padding: 1rem;
+	background: rgb(63, 243, 219,0.68);
+	border-radius: 5px;
+	box-shadow: 13px 15px 32px -9px rgba(45,167,189,0.81);
+}
 
 
