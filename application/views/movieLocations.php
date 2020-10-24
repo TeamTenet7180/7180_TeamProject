@@ -15,7 +15,9 @@
 			<article id="map"></article>
 		</div>
 		<div class='col-2 ml-3'>
-			<div id='details-section'></div>
+			<div id='details-section'>
+				<button class="btn btn-primary info" style="margin: 20px 100px ; display: inline-block">For more information</button>
+			</div>
 		</div>
 	</div>
 </div>
@@ -23,32 +25,70 @@
 <script src="<?php echo base_url(); ?>assets/js/jquery-3.4.1.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/leaflet.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/strip.pkgd.min.js"></script>
-<!--<script src="--><?php //echo base_url(); ?><!--assets/js/mapview.js"></script>-->
 
 <script>
 	$(document).ready(function () {
-		// $("#btn").bind("click", function (e) {
-			var q = "<?php echo $movie ?>";
+		var q = "<?php echo $movie ?>";
 
-			var settings = {
-				"async": true,
-				"crossDomain": true,
-				"url": "https://imdb8.p.rapidapi.com/title/auto-complete?q=" + q,
-				"method": "GET",
-				"headers": {
-					"x-rapidapi-host": "imdb8.p.rapidapi.com",
-					"x-rapidapi-key": "5bce2378d5msh854bdbec53dc614p1bb5b1jsnf4ae3379a4b0"
-				}
-			};
+		var settings = {
+			"async": false,
+			"crossDomain": true,
+			"url": "https://imdb8.p.rapidapi.com/title/auto-complete?q=" + q,
+			"method": "GET",
+			"headers": {
+				"x-rapidapi-host": "imdb8.p.rapidapi.com",
+				"x-rapidapi-key": "5bce2378d5msh854bdbec53dc614p1bb5b1jsnf4ae3379a4b0"
+			}
+		};
 
-			$.ajax(settings).done(function (response) {
-				console.log(response.d[0]["id"]);
-				console.log(response.d[0]["i"]["imageUrl"]);
-				localStorage.setItem("imgUrl",response.d[0]["i"]["imageUrl"]);
-				getLocation(response.d[0]["id"]);
-			});
-			// e.preventDefault();
-		// })
+		$.ajax(settings).done(function (response) {
+			console.log(response.d[0]["id"]);
+			console.log(response);
+			console.log(response.d[0]["i"]["imageUrl"]);
+			localStorage.setItem("id",response.d[0]["id"]);
+			localStorage.setItem("imgUrl",response.d[0]["i"]["imageUrl"]);
+			localStorage.setItem("name",response.d[0]["l"]);
+			localStorage.setItem("stars",response.d[0]["s"]);
+			localStorage.setItem("year",response.d[0]["y"]);
+			getLocation(response.d[0]["id"]);
+		});
+
+		// prepare for detail page
+		// images
+		var settings = {
+			"async": true,
+			"crossDomain": true,
+			"url": "https://imdb8.p.rapidapi.com/title/get-all-images?limit=3&tconst=" + localStorage.getItem("id"),
+			"method": "GET",
+			"headers": {
+				"x-rapidapi-host": "imdb8.p.rapidapi.com",
+				"x-rapidapi-key": "5bce2378d5msh854bdbec53dc614p1bb5b1jsnf4ae3379a4b0"
+			}
+		}
+
+		$.ajax(settings).done(function (response) {
+			console.log(response);
+			console.log(response["resource"]["images"])
+		});
+
+		// story
+		var settings = {
+			"async": true,
+			"crossDomain": true,
+			"url": "https://imdb8.p.rapidapi.com/title/get-overview-details?currentCountry=US&tconst=" + localStorage.getItem("id"),
+			"method": "GET",
+			"headers": {
+				"x-rapidapi-host": "imdb8.p.rapidapi.com",
+				"x-rapidapi-key": "5bce2378d5msh854bdbec53dc614p1bb5b1jsnf4ae3379a4b0"
+			}
+		}
+
+		$.ajax(settings).done(function (response) {
+			console.log(response);
+			console.log(response["plotSummary"]["text"]);
+			localStorage.setItem("story", response["plotSummary"]["text"]);
+		});
+
 	})
 
 	function getLocation(id) {
@@ -90,6 +130,10 @@
 	function iterationRecords(data) {
 		var lat0 = data[0]["latLng"]["lat"];
 		var lng0 = data[0]["latLng"]["lng"];
+		localStorage.setItem("lat",data[0]["latLng"]["lat"]);
+		localStorage.setItem("lng",data[0]["latLng"]["lng"]);
+		localStorage.setItem("location",data[0]["adminArea5"] + " " + data[0]["adminArea4"]+ " " + data[0]["adminArea3"]+ " " + data[0]["adminArea1"]);
+
 		var myMap = L.map("map").setView([lat0, lng0], 4);
 
 		L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoidXFpZHJ1Z28iLCJhIjoiY2tlcDdmbDV2MDc2ZjJ4bnk5bTgwcmkwbSJ9.aiKl3J-I-lVcj0iTllZlpg", {
@@ -109,11 +153,6 @@
 			var lng = recordValue["latLng"]["lng"];
 			// plotSummary
 			if (lat && lng) {
-				// $("#display").append(
-				//     $("<p>").text(lat),
-				//     $("<p>").text(lng),
-				// );
-
 				var marker = L.marker([lat, lng]).addTo(myMap);
 			}
 			if (recordID == 4) {
@@ -161,6 +200,27 @@
 				}
 			})
 		})
+
+		// Detail page
+		var info = {
+			name: localStorage.getItem("name"),
+			poster: localStorage.getItem("imgUrl"),
+			story: localStorage.getItem("story"),
+			year: localStorage.getItem("year"),
+			director: localStorage.getItem("stars"),
+			stars: localStorage.getItem("stars"),
+			geo: [localStorage.getItem("lat"), localStorage.getItem("lng")],
+			location: localStorage.getItem("location")
+		};
+		$('#details-section .info').on('click', function () {
+			localStorage.setItem("info", JSON.stringify(info));
+			setURL();
+		})
+
+		function setURL() {
+			window.location = "detailPage";
+			return false;
+		}
 	}
 
 </script>
