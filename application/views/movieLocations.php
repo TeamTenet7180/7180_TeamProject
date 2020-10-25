@@ -29,6 +29,7 @@
 <script>
 	$(document).ready(function () {
 		var q = "<?php echo $movie ?>";
+		const key = "30b79ce44cmsh3769f9eba7af62dp10d107jsn3ae5a782c21d"
 
 		var settings = {
 			"async": false,
@@ -37,7 +38,7 @@
 			"method": "GET",
 			"headers": {
 				"x-rapidapi-host": "imdb8.p.rapidapi.com",
-				"x-rapidapi-key": "5bce2378d5msh854bdbec53dc614p1bb5b1jsnf4ae3379a4b0"
+				"x-rapidapi-key": key
 			}
 		};
 
@@ -62,7 +63,7 @@
 			"method": "GET",
 			"headers": {
 				"x-rapidapi-host": "imdb8.p.rapidapi.com",
-				"x-rapidapi-key": "5bce2378d5msh854bdbec53dc614p1bb5b1jsnf4ae3379a4b0"
+				"x-rapidapi-key": key
 			}
 		}
 
@@ -83,7 +84,7 @@
 			"method": "GET",
 			"headers": {
 				"x-rapidapi-host": "imdb8.p.rapidapi.com",
-				"x-rapidapi-key": "5bce2378d5msh854bdbec53dc614p1bb5b1jsnf4ae3379a4b0"
+				"x-rapidapi-key": key
 			}
 		}
 
@@ -103,7 +104,7 @@
 			"method": "GET",
 			"headers": {
 				"x-rapidapi-host": "imdb8.p.rapidapi.com",
-				"x-rapidapi-key": "5bce2378d5msh854bdbec53dc614p1bb5b1jsnf4ae3379a4b0"
+				"x-rapidapi-key": key
 			},
 			"error": function () {
 				alert("yyy")
@@ -213,9 +214,9 @@
 			year: localStorage.getItem("year"),
 			director: localStorage.getItem("stars"),
 			stars: localStorage.getItem("stars"),
-			geo: [localStorage.getItem("lat"), localStorage.getItem("lng")],
+			geo: [parseFloat(localStorage.getItem("lat")), parseFloat(localStorage.getItem("lng"))],
 			location: localStorage.getItem("location"),
-			images: localStorage.getItem("images")
+			images: JSON.parse(localStorage.getItem("images"))
 		};
 		$('#details-section .info').on('click', function () {
 			localStorage.setItem("info", JSON.stringify(info));

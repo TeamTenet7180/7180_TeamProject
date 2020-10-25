@@ -209,7 +209,6 @@ function iterateRecordsGallery(results) {
 }
 
 
-
 $(function() {
 	const url = "https://services1.arcgis.com/o2uOINLfbzW2zEYE/arcgis/rest/services/Filming_Locations/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json"
 	$.get(url, function(data) {
