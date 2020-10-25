@@ -68,7 +68,11 @@
 
 		$.ajax(settings).done(function (response) {
 			console.log(response);
-			console.log(response["resource"]["images"])
+			var images = [];
+			$.each(response["resource"]["images"], function (recordID, recordValue) {
+				images.push(recordValue["url"]);
+			})
+			localStorage.setItem("images", JSON.stringify(images));
 		});
 
 		// story
@@ -210,7 +214,8 @@
 			director: localStorage.getItem("stars"),
 			stars: localStorage.getItem("stars"),
 			geo: [localStorage.getItem("lat"), localStorage.getItem("lng")],
-			location: localStorage.getItem("location")
+			location: localStorage.getItem("location"),
+			images: localStorage.getItem("images")
 		};
 		$('#details-section .info').on('click', function () {
 			localStorage.setItem("info", JSON.stringify(info));
