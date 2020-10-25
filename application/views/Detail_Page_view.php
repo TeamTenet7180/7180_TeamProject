@@ -87,13 +87,13 @@
       //the inner html that goes to #carousel-images
       var text = 
       `<div class="carousel-item active">
-      <img class="d-block w-100" src= <?php echo base_url(); ?>${images.tenet[0]} alt="slide No.1">
+      <img class="d-block w-100" src= ${movie_info.images[0]} alt="slide No.1">
       </div>
       `
-      for (let index = 1; index < images.tenet.length; index++) {
+      for (let index = 1; index < 3; index++) {
         const element = images.tenet[index];
         text += `<div class="carousel-item">
-                  <img class="d-block w-100" src=<?php echo base_url(); ?>${element} alt="slide No.${index + 1}">
+                  <img class="d-block w-100" src=${movie_info.images[index]} alt="slide No.${index + 1}">
                  </div>`
       }
 
@@ -147,7 +147,7 @@
 
 
       // Map 
-      var myMap = L.map("map").setView([-34.928497, 138.600739], 12);
+      var myMap = L.map("map").setView([movie_info.geo[0], movie_info.geo[1]], 12);
 
       L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoidXFpZHJ1Z28iLCJhIjoiY2tlcDdmbDV2MDc2ZjJ4bnk5bTgwcmkwbSJ9.aiKl3J-I-lVcj0iTllZlpg", {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',

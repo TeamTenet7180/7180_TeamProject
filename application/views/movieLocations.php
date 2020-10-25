@@ -27,9 +27,10 @@
 <script src="<?php echo base_url(); ?>assets/js/strip.pkgd.min.js"></script>
 
 <script>
+	const key = "30b79ce44cmsh3769f9eba7af62dp10d107jsn3ae5a782c21d"
+
 	$(document).ready(function () {
 		var q = "<?php echo $movie ?>";
-		const key = "30b79ce44cmsh3769f9eba7af62dp10d107jsn3ae5a782c21d"
 
 		var settings = {
 			"async": false,
